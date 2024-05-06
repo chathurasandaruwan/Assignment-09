@@ -102,13 +102,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     let currentIndex = 0;
+    let changeSide ="Right"
     let maxIndex = 5;
     function changeLights() {
         $(".light").removeClass("lightOnLv1");
         $(".light").eq(currentIndex).addClass("lightOnLv1");
-        ++currentIndex;
-        if (currentIndex > maxIndex){
+        if (changeSide==="Right"){
+            ++currentIndex;
+            if (currentIndex >= maxIndex){
+                changeSide="Left"
+            }
+        }else {
             --currentIndex;
+            if (currentIndex <= 0){
+                changeSide="Right"
+            }
         }
     }
     setInterval(changeLights,1000);
