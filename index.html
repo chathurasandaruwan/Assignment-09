@@ -101,8 +101,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-function changeLights() {
-    $(".light").eq(0).addClass("lightOnLv1");
+    let currentIndex = 0;
+    function changeLights() {
+    $(".light").eq(currentIndex).addClass("lightOnLv1");
+    currentIndex++;
 }
 setInterval(changeLights,1000);
 
