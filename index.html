@@ -125,6 +125,7 @@
     let currentIndex = 0;
     let changeSide ="Right"
     let maxIndex = 5;
+    let changeColorInterval = null;
     function changeLights() {
         $(".light").removeClass("lightOnLv1");
         $(".light").removeClass("lightOnLv2");
@@ -158,7 +159,10 @@
         }
     }
     $("#start").on('click',()=>{
-        let changeColorInterval = setInterval(changeLights,100);
+        changeColorInterval = setInterval(changeLights,100);
+    });
+    $("#stop").on('click',()=>{
+       clearInterval(changeColorInterval);
     });
 
 </script>
