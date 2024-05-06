@@ -117,6 +117,7 @@
         <button type="button" id="start">Start</button>
         <button type="button" id="stop">Stop</button>
     </div>
+    <audio id="audio" src="assets/audio/KnightRiderAudio.mp3"></audio>
 </section>
 
 
@@ -160,9 +161,11 @@
     }
     $("#start").on('click',()=>{
         changeColorInterval = setInterval(changeLights,100);
+        $("#audio")[0].play();
     });
     $("#stop").on('click',()=>{
        clearInterval(changeColorInterval);
+        $("#audio")[0].pause();
     });
 
 </script>
